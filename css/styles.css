@@ -35,10 +35,11 @@ body {
   font-weight: 400;
   color: var(--title-text-kolor);
 }
-a,
-svg {
+/* a,
+svg,
+.button {
   transition: 4s;
-}
+} */
 
 h1,
 h2,
@@ -87,6 +88,9 @@ address {
 .link {
   text-decoration: none;
   color: inherit;
+}
+.link-focus {
+  transition: 4s;
 }
 .link-focus:hover,
 .link-focus:focus {
@@ -190,6 +194,7 @@ address {
 .mail-tel {
   margin-right: 10px;
   margin-bottom: -2px;
+  transition: 4s;
 }
 .link-focus:hover .mail-tel,
 .link-focus:focus .mail-tel {
@@ -200,6 +205,24 @@ address {
   padding-top: 32px;
   padding-bottom: 32px;
 }
+.current {
+  color: var(--accent-color);
+}
+
+/* .list.current::after {
+  content: "";
+  position: absolute;
+  margin-top: 30px;
+  left: 0;
+
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin-bottom: -2px;
+  border-radius: 2px;
+} */
+
 .link-text::after {
   content: "";
   position: absolute;
@@ -213,19 +236,11 @@ address {
   transition: opacity 4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-text:focus::after,
-.link-text:hover::after {
+.link-text:hover::after,
+.current::after {
   opacity: 1;
 }
-/* .header .link:active {
-  /* background-color: #2196f3;
-  color: red;
-}
-.link-text:active::after,
-.link-text:active::after {
-  background-color: red;
-} */
-/* Z */
-/* логотип */
+
 .logo {
   font-family: Raleway;
   font-weight: 700;
@@ -233,6 +248,7 @@ address {
   line-height: 1.19;
   color: var(--accent-color);
 }
+
 .logo-header-studio {
   color: var(--additional-text-color);
 }
@@ -523,20 +539,22 @@ address {
   border-radius: 50%;
   width: 44px;
   height: 44px;
+  transition: 4s;
 }
 .social-icons .icon {
   width: 20px;
   height: 20px;
   fill: var(--icons-bg-color);
+  transition: 4s;
 }
 .social-icons-link:focus,
-.social-icons-link:hover,
+.social-icons-link:hover {
+  background-color: var(--accent-color);
+}
 .social-icons-link:focus .icon,
 .social-icons-link:hover .icon {
-  background-color: var(--accent-color);
   fill: var(--baton-text-color);
 }
-
 /* Постоянние клиенти  */
 
 .clients {
@@ -551,9 +569,11 @@ address {
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
+  transition: 4s;
 }
 .icons-client {
   fill: #afb1b8;
+  transition: 4s;
 }
 .link-client:hover .icons-client,
 .link-client:focus .icons-client {
